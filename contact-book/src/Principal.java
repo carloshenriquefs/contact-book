@@ -6,6 +6,7 @@ public class Principal {
 	public static String agenda[][] = new String[10][3];
 
 	public static void exibeMenu() {
+		System.out.println();
 		System.out.println("********* M E N U **********");
 		System.out.println();
 		System.out.println("[1] - Adicionar novo contato: ");
@@ -45,6 +46,23 @@ public class Principal {
 		mn[l][2] = entrada.next();
 	}
 
+	public static void exibirContato(String mn[][], int linha) {
+		System.out.println("Nome............: " + mn[linha][0]);
+		System.out.println("Celular.........: " + mn[linha][1]);
+		System.out.println("E-mail..........: " + mn[linha][2]);
+	}
+
+	public static void listarAgenda(String mn[][]) {
+		System.out.println("--------------- CONTATOS DA AGENDA: ");
+		for (int l = 0; l < 10; l++) {
+			if (mn[l][0] != "") {
+				exibirContato(mn, l);
+				System.out.println("---------------------------------");
+			}
+		}
+		System.out.println("-------------------- FIM DA AGENDA: ");
+	}
+
 	public static void main(String[] args) {
 		int opcao, linha;
 
@@ -58,7 +76,7 @@ public class Principal {
 
 			exibeMenu();
 
-			System.out.println("Escolha um opção: ");
+			System.out.print("Escolha um opção: ");
 			opcao = entrada.nextInt();
 			System.out.println();
 
@@ -77,7 +95,7 @@ public class Principal {
 				break;
 
 			case 4:
-
+				listarAgenda(agenda);
 				break;
 
 			case 5:
