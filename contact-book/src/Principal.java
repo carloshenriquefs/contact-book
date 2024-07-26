@@ -18,10 +18,22 @@ public class Principal {
 		System.out.println("****************************");
 	}
 
+	public static void limparMatriz(String mn[][]) {
+		for (int l = 0; l < 10; l++) {
+			for (int c = 0; c < 3; c++) {
+				mn[l][c] = "";
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		int opcao, linha;
 
 		String nome;
+
+		// ao iniciar a aplicação, sempre é bom limparmos a matriz para que a "sujeira"
+		// do Buffer não influencie nos resultados
+		limparMatriz(agenda);
 
 		do {
 
