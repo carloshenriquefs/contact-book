@@ -26,6 +26,25 @@ public class Principal {
 		}
 	}
 
+	public static int linhaProximoContato(String mn[][]) {
+		for (int l = 0; l < 10; l++) {
+			if (mn[l][0].equals("")) {
+				return l;
+			}
+		}
+		return -1;
+	}
+
+	public static void novo(String mn[][], int l) {
+		System.out.println("----------- PREENCHA O NOVO CONTATO: ");
+		System.out.print("Nome............: ");
+		mn[l][0] = entrada.next();
+		System.out.print("Celular.........: ");
+		mn[l][1] = entrada.next();
+		System.out.print("E-mail..........: ");
+		mn[l][2] = entrada.next();
+	}
+
 	public static void main(String[] args) {
 		int opcao, linha;
 
@@ -46,7 +65,7 @@ public class Principal {
 			switch (opcao) {
 
 			case 1:
-
+				novo(agenda, linhaProximoContato(agenda));
 				break;
 
 			case 2:
